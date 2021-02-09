@@ -1,5 +1,3 @@
-
-
 const TITLES = [
   'title#1',
   'title#2',
@@ -43,10 +41,10 @@ const PHOTOS = [
   'http://o0.github.io/assets/images/tokyo/hotel3.jpg',
 ];
 
-const xMin = 35.65000;
-const xMax = 35.70000;
-const yMin = 139.70000;
-const yMax = 139.80000;
+const X_MIN = 35.65000;
+const X_MAX = 35.70000;
+const Y_MIN = 139.70000;
+const Y_MAX = 139.80000;
 
 /*
 https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -89,8 +87,8 @@ const getRandomArray = (array) => {
 // Location
 
 const getRandomLocation = () => {
-  const x = getRandomFloat(xMin, xMax, 5);
-  const y = getRandomFloat(yMin, yMax, 5);
+  const x = getRandomFloat(X_MIN, X_MAX, 5);
+  const y = getRandomFloat(Y_MIN, Y_MAX, 5);
   return Number(x) + ', ' + Number(y);
 };
 
@@ -105,10 +103,10 @@ const createOffer = () => {
     offer: {
       title: getRandomArrayElement(TITLES),
       address: getRandomLocation(),
-      price: getRandomInteger(10,2000),
+      price: getRandomInteger(10, 2000),
       type: getRandomArrayElement(TYPES),
-      rooms: getRandomInteger(1,200),
-      guests: getRandomInteger(1,450),
+      rooms: getRandomInteger(1, 200),
+      guests: getRandomInteger(1, 450),
       checkin: getRandomArrayElement(TIME),
       checkout: getRandomArrayElement(TIME),
       features: getRandomArray(FEATURES),
@@ -123,4 +121,6 @@ const createOffer = () => {
 };
 
 const createLikeOffers = new Array(OFFER_COUNT).fill(null).map(() => createOffer());
-createLikeOffers();
+
+console.log(createLikeOffers);
+
