@@ -84,7 +84,9 @@ const createOffer = () => {
   };
 };
 
-const createLikeOffers = new Array(OFFER_COUNT).fill(null).map(() => createOffer());
+const createLikeOffers = () => new Array(OFFER_COUNT).fill(null).map(() => createOffer());
 
 console.log(createLikeOffers);
+
+export {createLikeOffers};
 
