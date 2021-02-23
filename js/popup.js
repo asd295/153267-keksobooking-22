@@ -41,6 +41,8 @@ const renderAdvance = (declare) => {
   declare.offer.photos.forEach(photo => {
     const photoElement = document.createElement('img');
     photoElement.src = `${photo}`;
+    photoElement.height = '40';
+    photoElement.width = '45';
     photoList.appendChild(photoElement);
   });
 
