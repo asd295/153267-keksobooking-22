@@ -50,5 +50,4 @@ const renderAdvance = (declare) => {
 
   return declareElement
 }
-
 map.appendChild(renderAdvance(similarDeclare[0]));
